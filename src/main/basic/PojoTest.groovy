@@ -10,9 +10,10 @@ import main.basic.pojo.Person
 class PojoTest implements Test {
 
     /**
-     * 在Groovy 中，会默认地为 类中为public的成员变量 隐式地创建 Getter 和 Setter 方法，并提供带参的Constructor
-     * pojo 的成员变量必须为public
-     * 利用隐式的带参的Constructor 创建对象时，需要指明 参数代表的成员变量的声明时名称
+     * 如果类的成员变量没有加任何权限访问，则称为Property, 否则是Field
+     * filed 和Java 中的成员变量相同
+     * Property的话，它是一个private field 和getter setter的集合，也就是说groovy会自动生成getter setter方法
+     * 因此在类外面的代码，都是透明的调用getter和setter方法
      */
 
     @Override

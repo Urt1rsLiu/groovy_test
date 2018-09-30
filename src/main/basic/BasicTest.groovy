@@ -1,5 +1,6 @@
 package main.basic
 
+import junit.textui.TestRunner
 import main.Test
 
 /**
@@ -18,6 +19,11 @@ class BasicTest implements Test {
 
         Object object = "object"
         println(printInt(object))
+
+        assert object == "object" : "object is"
+        def allTest = new GroovyTestSuite()
+        allTest.addTestSuite(ClosureTest.class)
+        TestRunner.run(allTest)
 
     }
 

@@ -6,8 +6,9 @@ import main.Test
  * @author Hongzhi Liu  2014302580200@whu.edu.cn
  * @date 2018/9/21 13:40 
  */
-class ClosureTest implements Test {
+class ClosureTest extends GroovyTestCase implements Test {
 
+    String b3 = "b23"
     /**
      * 测试总结groovy 闭包的使用
      * 闭包是groovy 中特殊的对象，闭包的主体是一段可执行的匿名代码块
@@ -22,19 +23,19 @@ class ClosureTest implements Test {
     @Override
     void runTest() {
         printMap()
-        String b3 = "b23"
-
-//        assert b3 == "b212"
-
         def clo1 = { param1, param2 -> println "${param1},${param2},${b3}"; println param1 + " " + b3; println() }
         changeWorld(clo1)
         b3 = "Jim"
         changeWorld(clo1)
-
-
         def clo2 = { println "${it}" }
         clo2('hello,world!')
 
+    }
+
+    void testA(int a, int b) {
+        int d = a / b
+        println(d)
+        assertToString(b3, "b23")
     }
 
     /**
@@ -64,7 +65,7 @@ class ClosureTest implements Test {
         map.each({ println it.getKey() + " maps to ${it.getValue()}" })
 
         //each 的闭包里有2个参数时，底层则将entry的key 和value作为参数执行
-        map.each {param1,param2->println(param1 + "maps to ${param2}")}
+        map.each { param1, param2 -> println(param1 + "maps to ${param2}") }
     }
 
 

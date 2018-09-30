@@ -5,6 +5,7 @@ import main.basic.ClosureTest
 import main.basic.ListTest
 import main.basic.MultiMethodTest
 import main.basic.PojoTest
+import main.basic.XmlBuildTest.XmlBuildTest
 
 /**
  * @author Hongzhi Liu  2014302580200@whu.edu.cn
@@ -17,12 +18,20 @@ class Run{
         def gt
 
 //        gt = new MultiMethodTest()
-//        gt = new PojoTest()
+        gt = new PojoTest()
 //        gt = new ListTest()
-        gt = new ClosureTest()
 
+//        gt = new ClosureTest()
+//        gt.runTest()
+//
+//        gt = new BasicTest()
+//        gt.runTest()
+
+//        gt = new XmlBuildTest()
 
         gt.runTest()
+
+
     }
 
 
